@@ -1,7 +1,7 @@
 int Solution::braces(string A) {
     stack<char> s;
-    auto size = A.length();
-    auto i = 0;
+    int size = A.length();
+    int i = 0;
     while(i<size)
     {
         char c = A[i];
@@ -13,12 +13,12 @@ int Solution::braces(string A) {
                 return 1;
             else
             {
-                while (!s.empty() && s.top() != '(')
+                while (s.top() != '(')
                     s.pop();
                 s.pop();
             }
         }
-        ++i;
+        i++;
     }
     return 0;
 }
